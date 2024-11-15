@@ -2,7 +2,7 @@
 FROM openjdk:17-jdk-slim
 
 # JAR 파일을 컨테이너로 복사
-ARG JAR_FILE=build/libs/springboot-test-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=build/libs/SpringJPA-0.0.1-SNAPSHOT.jar
 COPY ${JAR_FILE} app.jar
 
 # 애플리케이션 실행
