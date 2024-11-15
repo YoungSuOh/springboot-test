@@ -7,12 +7,13 @@ spring:
   application:
     name: SpringJPA
 
+  # MySQL
   datasource:
-    url:
-    username:
-    password:
+    url: jdbc:mysql://db-2vm3fl-kr.vpc-pub-cdb.ntruss.com:3306/bootdb
+    username: youngsu
+    password: qwe123!@#
     driver-class-name: com.mysql.cj.jdbc.Driver
-
+  # JPA
   jpa:
     hibernate:
       ddl-auto: update
@@ -20,3 +21,24 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL8Dialect  # Dialect mySql로 설정
+  # Redis
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+
+# ncp object storage
+cloud:
+  aws:
+    credentials:
+      access-key: 0389DFB99F746878DB12
+      secret-key: 050CE19EB83E86EEDD7EA995DB392AEE59CC3D1A
+    stack:
+      auto: false
+    region:
+      static: kr-standard
+    s3:
+      endpoint: https://kr.object.ncloudstorage.com
+      bucket-name: dr-rate
+      bucket-directory: storage
